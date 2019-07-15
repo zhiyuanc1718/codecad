@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>jQuery Template</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function(){
+      var names = ["java program structure", "hello world quiz", "planting a tree",
+                  "what is an ide", "Variables quiz", "Mad-Libs", "Variable Manipulation quiz",
+                  "Math Magic", "Classes & Objects Video", "intro to java classes quiz",
+                  "Methods quiz", "A Basic Calculator ", "Build a droid", "control flow quiz",
+                  "A simple car loan calculator", "continents and ciites", "arrays quiz",
+                  "arraylist quiz", "Desert island playlist"];
+      
+      var links = ["https://www.codecademy.com/courses/learn-java/articles/java-program-structure",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-hello-world-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/planting-a-tree",
+                  "https://www.codecademy.com/courses/learn-java/articles/what-is-an-ide",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-variables-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/java-variables-mad-libs",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-variable-manipulation-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/math-magic",
+                  "https://www.codecademy.com/courses/learn-java/videos/classes-and-objects-video",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/intro-to-java-classes-qz",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-methods-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/basic-calculator",
+                  "https://www.codecademy.com/courses/learn-java/projects/build-a-droid",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-conditionals-and-control-flow-quiz-updated",
+                  "https://www.codecademy.com/courses/learn-java/projects/loan-payment-calculator",
+                  "https://www.codecademy.com/courses/learn-java/projects/continents-cities",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-arrays-quiz",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-arraylist-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/java-desert-island-playlist"];
+      
+      for (var i=0; i<links.length; i++){
+        $("div").append("<p><a href=" + links[i] + ">" + names[i] + "</a></p>")
+      }
+    });
+  </script>
+</head>
+<body>
+  <div>
+   
+  </div>
+  
+</body>
+</html>
