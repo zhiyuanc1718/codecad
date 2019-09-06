@@ -20,77 +20,79 @@
 <script>
    $(function(){
      
-     //repetitive javascript but okay. 
-     
      var names = ["Java Program Structure", "Hello World Quiz", "Planting A Tree",
-                  "What Is An Ide"]
-     var names2 = ["Variables Quiz", "Mad-Libs", "Variable Manipulation Quiz",
-                  "Math Magic"]
-     var names3 = ["Classes & Objects Video", "Intro To Java Classes Quiz",
-                  "Methods Quiz", "A Basic Calculator ", "Build A Droid"]
-     var names4 = ["Control Flow Quiz",
-                  "A Simple Car Loan Calculator", "Continents And Cities"]
-     var names5 = ["Arrays Quiz",
-                  "Arraylist Quiz", "Desert Island Playlist"];
+                  "What Is An Ide","Variables Quiz", "Mad-Libs", "Variable Manipulation Quiz",
+                  "Math Magic","Classes & Objects Video", "Intro To Java Classes Quiz",
+                  "Methods Quiz", "A Basic Calculator ", "Build A Droid","Control Flow Quiz",
+                  "A Simple Car Loan Calculator", "Continents And Cities","Arrays Quiz",
+                  "Arraylist Quiz", "Desert Island Playlist","Loops Quiz","Fizz Buzz",
+                  "The Prime Directive","String Methods Quiz","DNA Sequencing","Inheritance & Polymorphism Quiz",
+                  "Language Families","Debugging Quiz","Bug Detective",]
       
      var links = ["https://www.codecademy.com/courses/learn-java/articles/java-program-structure",
                   "https://www.codecademy.com/courses/learn-java/quizzes/java-hello-world-quiz",
                   "https://www.codecademy.com/courses/learn-java/projects/planting-a-tree",
-                  "https://www.codecademy.com/courses/learn-java/articles/what-is-an-ide"];
-      
-     var links2 = ["https://www.codecademy.com/courses/learn-java/quizzes/java-variables-quiz",
+                  "https://www.codecademy.com/courses/learn-java/articles/what-is-an-ide",     
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-variables-quiz",
                   "https://www.codecademy.com/courses/learn-java/projects/java-variables-mad-libs",
                   "https://www.codecademy.com/courses/learn-java/quizzes/java-variable-manipulation-quiz",
-                  "https://www.codecademy.com/courses/learn-java/projects/math-magic"]
-     
-     var links3 = ["https://www.codecademy.com/courses/learn-java/videos/classes-and-objects-video",
+                  "https://www.codecademy.com/courses/learn-java/projects/math-magic",     
+                  "https://www.codecademy.com/courses/learn-java/videos/classes-and-objects-video",
                   "https://www.codecademy.com/courses/learn-java/quizzes/intro-to-java-classes-qz",
                   "https://www.codecademy.com/courses/learn-java/quizzes/java-methods-quiz",
                   "https://www.codecademy.com/courses/learn-java/projects/basic-calculator",
-                  "https://www.codecademy.com/courses/learn-java/projects/build-a-droid"]
-     
-     var links4 = ["https://www.codecademy.com/courses/learn-java/quizzes/java-conditionals-and-control-flow-quiz-updated",
+                  "https://www.codecademy.com/courses/learn-java/projects/build-a-droid",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-conditionals-and-control-flow-quiz-updated",
                   "https://www.codecademy.com/courses/learn-java/projects/loan-payment-calculator",
-                  "https://www.codecademy.com/courses/learn-java/projects/continents-cities"]
-     
-     var links5 =  ["https://www.codecademy.com/courses/learn-java/quizzes/java-arrays-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/continents-cities",    
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-arrays-quiz",
                   "https://www.codecademy.com/courses/learn-java/quizzes/java-arraylist-quiz",
-                  "https://www.codecademy.com/courses/learn-java/projects/java-desert-island-playlist"]
+                  "https://www.codecademy.com/courses/learn-java/projects/java-desert-island-playlist",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-loops-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/java-fizzbuzz",
+                  "https://www.codecademy.com/courses/learn-java/projects/java-prime-directive",                      
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-string-methods-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/java-dna-sequencing",                
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-inheritance-and-polymorphism-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/java-language-families",
+                  "https://www.codecademy.com/courses/learn-java/quizzes/java-debugging-quiz",
+                  "https://www.codecademy.com/courses/learn-java/projects/java-bug-detective"]
      
+     //putting all unit classes into array; yes, not manually.
+     var unit = []
+     for (var x = 1; x<=9; x++){
+       unit[unit.length] = ".u" + x;
+     }
+
+     //putting links in their corresponding unit
      for (var i=0; i<links.length; i++){
-        $(".u1").append(
+        var r;
+        if (i<=3){
+          r=0;
+        }else if (i<=7){
+          r=1;
+        }else if (i<=12){
+          r=2;
+        }else if (i<=15){
+          r=3;
+        }else if (i<=18){
+          r=4;
+        }else if (i<=21){
+          r=5;
+        }else if (i<=23){
+          r=6;
+        }else if (i<=25){
+          r=7;
+        }else{
+          r=8;
+        }
+         
+        $(unit[r]).append(
           '<div class="col-lg-4 col-md-6 col-sm-12" style="padding-bottom: 20px">' + '<div class="card w-100">' + 
           '<div class="card-body">' + '<h5 class="card-title">' + names[i] + "</h5>" +
           '<a href="' + links[i] + '"' + 'class="btn btn-primary"' + "target='_blank'" + '>Click Here</a>' + "</div></div></div>")
       }
      
-     for (var i=0; i<links2.length; i++){
-        $(".u2").append(
-          '<div class="col-lg-4 col-md-6 col-sm-12" style="padding-bottom: 20px">' + '<div class="card w-100">' + 
-          '<div class="card-body">' +'<h5 class="card-title">' + names2[i] + "</h5>" +
-          '<a href="' + links2[i] + '"' + 'class="btn btn-primary"' + "target='_blank'" + '>Click Here</a>' + "</div></div></div>")
-      }
-     
-     for (var i=0; i<links3.length; i++){
-        $(".u3").append(
-          '<div class="col-lg-4 col-md-6 col-sm-12" style="padding-bottom: 20px">' + '<div class="card w-100">' + 
-          '<div class="card-body">' +'<h5 class="card-title">' + names3[i] + "</h5>" +
-          '<a href="' + links3[i] + '"' + 'class="btn btn-primary"' + "target='_blank'" + '>Click Here</a>' + "</div></div></div>")
-      }
-     
-     for (var i=0; i<links4.length; i++){
-        $(".u4").append(
-          '<div class="col-lg-4 col-md-6 col-sm-12" style="padding-bottom: 20px">' + '<div class="card w-100">' + 
-          '<div class="card-body">' +'<h5 class="card-title">' + names4[i] + "</h5>" +
-          '<a href="' + links4[i] + '"' + 'class="btn btn-primary"' + "target='_blank'" + '>Click Here</a>' + "</div></div></div>")
-      }
-     
-     for (var i=0; i<links5.length; i++){
-        $(".u5").append(
-          '<div class="col-lg-4 col-md-6 col-sm-12" style="padding-bottom: 20px">' + '<div class="card w-100">' + 
-          '<div class="card-body">' +'<h5 class="card-title">' + names5[i] + "</h5>" +
-          '<a href="' + links5[i] + '"' + 'class="btn btn-primary"' + "target='_blank'" + '>Click Here</a>' + "</div></div></div>")
-      }
     });
 </script>
   
@@ -169,6 +171,50 @@
   
   <div class="container center" style="background-color:">
       <div class="row u5">
+        
+      </div>
+  </div>
+  
+<!--unit 6 -->
+  <div class="container jumbotron center space">
+    <h1>Unit 6 : Loops</h1>
+  </div>
+  
+  <div class="container center" style="background-color:">
+      <div class="row u6">
+        
+      </div>
+  </div>
+
+<!--unit 7 -->
+  <div class="container jumbotron center space">
+    <h1>Unit 7 : String Methods</h1>
+  </div>
+  
+  <div class="container center" style="background-color:">
+      <div class="row u7">
+        
+      </div>
+  </div>
+
+<!--unit 8 -->
+  <div class="container jumbotron center space">
+    <h1>Unit 8 : Inheritance + Polymorphism</h1>
+  </div>
+  
+  <div class="container center" style="background-color:">
+      <div class="row u8">
+        
+      </div>
+  </div>
+  
+<!--unit 9 -->
+  <div class="container jumbotron center space">
+    <h1>Unit 9 : Debugging</h1>
+  </div>
+  
+  <div class="container center" style="background-color:">
+      <div class="row u9">
         
       </div>
   </div>
